@@ -58,7 +58,9 @@ section:not(.alt) .step,section:not(.alt) .gcard,section:not(.alt) .req,section:
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 @media (max-width:860px){.bento{grid-template-columns:1fr}.tile,.tile.w3,.tile.w4{grid-column:auto;min-height:0}.split,.price,.guide{grid-template-columns:1fr}.split.rev>:first-child{order:0}.steps{grid-template-columns:1fr 1fr}nav .links{display:none}.lang{margin-left:auto}section{padding:70px 22px}.req div{flex-direction:column;gap:4px}}
 @media (max-width:520px){.steps{grid-template-columns:1fr}}
+#tf{text-align:left;margin-top:18px}#tf label{display:block;font-size:14px;font-weight:600;margin:12px 0 4px}#tf input{width:100%;font:inherit;font-size:17px;padding:11px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--fg)}#tf input:focus{outline:2px solid var(--blue);border-color:transparent}#tf .hint,.priv{font-size:13px!important;color:var(--muted)}#tf .cf-turnstile{margin:14px 0 4px;min-height:65px}#tbtn,#tcopy{border:0;cursor:pointer;font-family:inherit;margin-top:10px}#tbtn[disabled]{opacity:.55;cursor:wait}.terr{color:#d70015;font-size:15px;margin:10px 0 0!important;min-height:0}@media (prefers-color-scheme:dark){.terr{color:#ff6961}}#tres{margin-top:18px;text-align:left}#tkey{display:block;word-break:break-all;font:14px/1.5 ui-monospace,Consolas,monospace;background:var(--bg2);border-radius:12px;padding:14px;margin:8px 0}
 </style>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 <nav><div class="in"><a class="logo" href="#top"><img src="img/logo.png" alt="">Tablet Mirror</a>
@@ -117,13 +119,17 @@ section:not(.alt) .step,section:not(.alt) .gcard,section:not(.alt) .req,section:
 <section class="alt" id="price"><div class="c center">
 <h2 class="rv" data-i="priceT"></h2><p class="lead rv" data-i="priceL"></p>
 <div class="price">
-<div class="pcard hl rv"><h3 data-i="p1t"></h3><div class="big" data-i="p1b"></div><p data-i="p1"></p><a class="pill" id="trialmail" href="#" target="_blank" rel="noopener" data-i="p1c"></a><p class="alt-mail"><a id="trialmail2" href="#" data-i="mapp"></a></p></div>
+<div class="pcard hl rv"><h3 data-i="p1t"></h3><div class="big" data-i="p1b"></div><p data-i="p1"></p>
+<form id="tf" novalidate><label for="tmid" data-i="fMid"></label><input id="tmid" autocomplete="off" spellcheck="false" maxlength="19" placeholder="0368-935B-203F-0A84"><label for="tem" data-i="fMail"></label><input id="tem" type="email" autocomplete="email" maxlength="200"><p class="hint" data-i="fHint"></p><div class="cf-turnstile" data-sitekey="0x4AAAAAAF-TBqKlJQIBUuEH"></div><button class="pill" id="tbtn" type="submit" data-i="fBtn"></button></form>
+<p class="terr" id="terr" role="alert"></p>
+<div id="tres" hidden><p id="tokmsg"></p><code id="tkey"></code><button class="pill" id="tcopy" type="button" data-i="fCopy"></button></div>
+<p class="priv" data-i="fPriv"></p><p class="alt-mail"><a id="trialmail2" href="#" data-i="fMailUs"></a></p></div>
 <div class="pcard rv"><h3 data-i="p2t"></h3><div class="big" data-i="p2b"></div><p data-i="p2"></p><a class="pill" id="buymail" href="#" target="_blank" rel="noopener" data-i="p2c"></a><p class="alt-mail"><a id="buymail2" href="#" data-i="mapp"></a></p></div>
 </div></div></section>
 
 <section id="faq"><div class="c center"><h2 class="rv" data-i="faqT"></h2><div class="faq" id="faqbox"></div></div></section>
 
-<footer><div>Tablet Mirror v1.0.2 &middot; &copy; 2026 SirProducts &middot; <a href="EULA.md" data-i="eula"></a> &middot; <a href="mailto:aydemiralisir@gmail.com">aydemiralisir@gmail.com</a></div>
+<footer><div>Tablet Mirror v1.0.3 &middot; &copy; 2026 SirProducts &middot; <a href="EULA.md" data-i="eula"></a> &middot; <a href="mailto:aydemiralisir@gmail.com">aydemiralisir@gmail.com</a></div>
 <div data-i="legal"></div></footer>
 
 <script>
@@ -159,9 +165,9 @@ r1k:"PC",r1v:"Windows 11 (64-bit), 4 GB RAM or more, a free USB port",
 r2k:"Android",r2v:"Android 5+ for the screen, Android 12+ for the camera, Android 11+ for device sound",
 r3k:"Cable",r3v:"A USB data cable for each device",
 r4k:"Tested on",r4v:"Huawei MatePad 11 and Xiaomi 15T Pro",
-priceT:"Try it free for 14 days.",priceL:"Send us your Machine ID and we send you a trial key.",
-p1t:"Free trial",p1b:"14 days",p1:"Open the app, copy the Machine ID shown on the first screen and e-mail it to us. The key comes back to you by e-mail.",p1c:"Request a trial key",
-p2t:"Licence",p2b:"Ask for price",p2:"One licence for one PC. Your recordings are always yours. Write to us for the price and how to pay.",p2c:"Ask about a licence",
+priceT:"Try it free for 14 days.",priceL:"Paste your Machine ID and get a trial key straight away.",
+p1t:"Free trial",p1b:"14 days",
+p1:"Open the app, copy the Machine ID from the first screen and paste it here. Your 14-day key appears instantly.",fMid:"Machine ID",fMail:"E-mail (optional)",fHint:"Optional. Only used to help you if something goes wrong and to tell you about updates.",fBtn:"Get my trial key",fCopy:"Copy key",fCopied:"Copied",fWait:"Please wait...",fOk:"Your key is valid until {d}. Copy it and paste it into the activation window.",fAgain:"You already requested a trial for this PC. Here is the same key again, valid until {d}.",eMachine:"That Machine ID doesn't look right. It looks like 0368-935B-203F-0A84.",eMail:"That e-mail address doesn't look right.",eUsed:"This PC has already used its free trial. Write to us to buy a licence.",eRate:"Too many requests. Please try again tomorrow.",eCaptcha:"Please complete the check above and try again.",eOther:"Something went wrong. You can also e-mail us your Machine ID.",fPriv:"We store your Machine ID, and your e-mail if you give it, to issue and support your trial. Nothing else is collected.",fMailUs:"Or e-mail us your Machine ID",p2t:"Licence",p2b:"Ask for price",p2:"One licence for one PC. Your recordings are always yours. Write to us for the price and how to pay.",p2c:"Ask about a licence",
 faqT:"Questions and answers.",
 eula:"Terms (EULA)",legal:"Tablet Mirror is not affiliated with Zoom, Google, Microsoft, Xiaomi, Huawei or Samsung. All names belong to their owners.",
 mapp:"Or open in my mail app",mTrialS:"Tablet Mirror trial key",mTrialB:"Hello,\nPlease send me a 14-day trial key.\nMy Machine ID: \nMy name: ",
@@ -198,9 +204,9 @@ r1k:"Bilgisayar",r1v:"Windows 11 (64 bit), en az 4 GB RAM, boş bir USB portu",
 r2k:"Android",r2v:"Ekran için Android 5 ve üzeri, kamera için Android 12 ve üzeri, cihaz sesi için Android 11 ve üzeri",
 r3k:"Kablo",r3v:"Her cihaz için bir USB veri kablosu",
 r4k:"Test edilen cihazlar",r4v:"Huawei MatePad 11 ve Xiaomi 15T Pro",
-priceT:"14 gün ücretsiz deneyin.",priceL:"Makine Kimliğinizi bize gönderin, size deneme anahtarınızı iletelim.",
-p1t:"Ücretsiz deneme",p1b:"14 gün",p1:"Uygulamayı açın, ilk ekranda görünen Makine Kimliğini kopyalayıp bize e-postayla gönderin. Deneme anahtarınız e-postayla size ulaşır.",p1c:"Deneme anahtarı isteyin",
-p2t:"Lisans",p2b:"Fiyat için yazın",p2:"Bir bilgisayar için bir lisans. Kayıtlarınız her zaman size aittir. Fiyat ve ödeme bilgisi için bize yazın.",p2c:"Lisans hakkında bilgi alın",
+priceT:"14 gün ücretsiz deneyin.",priceL:"Makine Kimliğinizi yapıştırın, deneme anahtarınızı hemen alın.",
+p1t:"Ücretsiz deneme",p1b:"14 gün",
+p1:"Uygulamayı açın, ilk ekrandaki Makine Kimliğini kopyalayıp buraya yapıştırın. 14 günlük anahtarınız hemen görünür.",fMid:"Makine Kimliği",fMail:"E-posta (isteğe bağlı)",fHint:"İsteğe bağlı. Yalnızca bir sorun olursa size yardımcı olmak ve güncellemeleri duyurmak için kullanılır.",fBtn:"Deneme anahtarımı al",fCopy:"Anahtarı kopyala",fCopied:"Kopyalandı",fWait:"Lütfen bekleyin...",fOk:"Anahtarınız {d} tarihine kadar geçerli. Kopyalayıp etkinleştirme penceresine yapıştırın.",fAgain:"Bu bilgisayar için zaten deneme istediniz. Aynı anahtar yine burada, {d} tarihine kadar geçerli.",eMachine:"Makine Kimliği doğru görünmüyor. Şuna benzemeli: 0368-935B-203F-0A84.",eMail:"E-posta adresi doğru görünmüyor.",eUsed:"Bu bilgisayar ücretsiz denemesini zaten kullandı. Lisans için bize yazın.",eRate:"Çok fazla istek geldi. Lütfen yarın tekrar deneyin.",eCaptcha:"Lütfen yukarıdaki doğrulamayı tamamlayıp tekrar deneyin.",eOther:"Bir şeyler ters gitti. Makine Kimliğinizi bize e-postayla da gönderebilirsiniz.",fPriv:"Denemenizi vermek ve desteklemek için Makine Kimliğinizi, verirseniz e-postanızı saklarız. Başka hiçbir veri toplanmaz.",fMailUs:"Ya da Makine Kimliğinizi bize e-postayla gönderin",p2t:"Lisans",p2b:"Fiyat için yazın",p2:"Bir bilgisayar için bir lisans. Kayıtlarınız her zaman size aittir. Fiyat ve ödeme bilgisi için bize yazın.",p2c:"Lisans hakkında bilgi alın",
 faqT:"Sık sorulan sorular.",
 eula:"Kullanım koşulları (EULA)",legal:"Tablet Mirror; Zoom, Google, Microsoft, Xiaomi, Huawei ve Samsung ile bağlantılı değildir. Tüm adlar ilgili sahiplerine aittir.",
 mapp:"Ya da e-posta uygulamamda aç",mTrialS:"Tablet Mirror deneme anahtarı talebi",mTrialB:"Merhaba,\n14 günlük deneme anahtarı rica ediyorum.\nMakine Kimliğim: \nAdım soyadım: ",
@@ -211,25 +217,46 @@ var FAQ={en:[
 ["Why does the installer ask for administrator rights?","To add the virtual camera \"Tablet Mirror Camera\" for the whole PC. Windows allows this only with admin rights, once."],
 ["My phone or tablet is not detected.","Use a USB data cable, turn on USB debugging and tap Allow on the device. The built-in guide shows each step with pictures."],
 ["Does it work on Windows 10 or Mac?","Only Windows 11 for now, because the virtual camera needs it. There is no Mac version."],
-["How do I get a trial key?","Send the Machine ID shown in the app to "+MAIL+". We reply with a 14-day key."]],
+["How do I get a trial key?","Open the app, copy the Machine ID from the first screen and paste it into the form in the Trial section. The 14-day key appears right away. If the form does not work, e-mail the Machine ID to "+MAIL+"."]],
 tr:[
 ["Windows “Bilgisayarınızı korudu” uyarısı veriyor. Güvenli mi?","Kurulum dosyası henüz dijital olarak imzalı değil; bu yüzden Windows her yeni programda bu uyarıyı gösterir. <b>Ek bilgi</b>'ye, ardından <b>Yine de çalıştır</b>'a tıklayın. İndirdiğiniz dosyanın SHA-256 değerini sürüm notlarındakiyle karşılaştırarak doğrulayabilirsiniz."],
 ["Görüntülerim bilgisayarımdan dışarı çıkıyor mu?","Hayır. Görüntü, cihazdan USB kabloyla bilgisayarınıza gelir ve orada işlenir. Hesap da yok, bulut da. Görüntülü görüşme uygulaması (Zoom, Meet...) yalnızca kamera olarak seçtiğinizi paylaşır."],
 ["Kurulum neden yönetici izni istiyor?","\"Tablet Mirror Camera\" sanal kamerasını bilgisayara eklemek için. Windows buna yalnızca yönetici izniyle, bir kez izin veriyor."],
 ["Telefonum ya da tabletim görünmüyor, ne yapmalıyım?","USB veri kablosu kullandığınızdan emin olun, USB hata ayıklamayı açın ve cihazda çıkan soruda <b>İzin ver</b>'e dokunun. Uygulamadaki rehber her adımı resimlerle gösteriyor."],
 ["Windows 10'da ya da Mac'te çalışır mı?","Şimdilik yalnızca Windows 11'de çalışıyor; sanal kamera Windows 11 gerektiriyor. Mac sürümü yok."],
-["Deneme anahtarını nasıl alırım?","Uygulamada görünen Makine Kimliğini "+MAIL+" adresine gönderin. 14 günlük anahtarı size e-postayla iletelim."]]};
+["Deneme anahtarını nasıl alırım?","Uygulamayı açın, ilk ekranda görünen Makine Kimliğini kopyalayıp Deneme bölümündeki forma yapıştırın. 14 günlük anahtar hemen görünür. Form çalışmazsa Makine Kimliğini "+MAIL+" adresine e-postayla gönderin."]]};
 function gmail(s,b){return "https://mail.google.com/mail/?view=cm&fs=1&to="+MAIL+"&su="+encodeURIComponent(s)+"&body="+encodeURIComponent(b)}
 function mail(s,b){return "mailto:"+MAIL+"?subject="+encodeURIComponent(s)+"&body="+encodeURIComponent(b)}
+var WORKER="https://sirproducts-trial.sirproducts.workers.dev/trial",res=null,errc="";
+function upd(){var t=T[document.documentElement.lang]||T.en;
+  document.getElementById("terr").textContent=errc?t[errc]:"";
+  document.getElementById("tres").hidden=!res;
+  if(res){document.getElementById("tkey").textContent=res.key;document.getElementById("tokmsg").textContent=t[res.again?"fAgain":"fOk"].replace("{d}",res.expires)}}
+document.getElementById("tf").addEventListener("submit",function(ev){ev.preventDefault();
+  var t=T[document.documentElement.lang],btn=document.getElementById("tbtn"),m=document.getElementById("tmid").value.trim().toUpperCase().replace(/\s+/g,""),
+      em=document.getElementById("tem").value.trim(),tok=(document.querySelector("[name=cf-turnstile-response]")||{}).value||"";
+  res=null;errc="";
+  if(!/^[0-9A-F]{4}(-[0-9A-F]{4}){3}$/.test(m)){errc="eMachine";upd();return}
+  if(em&&!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)){errc="eMail";upd();return}
+  if(!tok){errc="eCaptcha";upd();return}
+  btn.disabled=true;btn.textContent=t.fWait;
+  fetch(WORKER,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({machine:m,email:em,turnstile:tok})})
+   .then(function(r){return r.json().then(function(j){return[r.status,j]})})
+   .then(function(a){var j=a[1];if(j.key){res=j}else{errc={bad_machine:"eMachine",bad_email:"eMail",trial_used:"eUsed",rate_limited:"eRate",captcha:"eCaptcha"}[j.error]||"eOther"}})
+   .catch(function(){errc="eOther"})
+   .then(function(){btn.disabled=false;btn.textContent=T[document.documentElement.lang].fBtn;try{turnstile.reset()}catch(e){}upd()})});
+document.getElementById("tcopy").addEventListener("click",function(){var b=this,t=T[document.documentElement.lang];
+  function done(){b.textContent=t.fCopied;setTimeout(function(){b.textContent=T[document.documentElement.lang].fCopy},1500)}
+  try{navigator.clipboard.writeText(res.key).then(done)}catch(e){}});
 function setLang(l){
   try{localStorage.setItem("lang",l)}catch(e){}
   document.documentElement.lang=l;
   document.title=T[l].tTitle;var md=document.querySelector("meta[name=description]");if(md)md.setAttribute("content",T[l].tDesc);
   document.querySelectorAll("[data-i]").forEach(function(el){var v=T[l][el.dataset.i];if(v!==undefined)el.innerHTML=v});
   document.getElementById("faqbox").innerHTML=FAQ[l].map(function(q){return "<details><summary>"+q[0]+"</summary><p>"+q[1]+"</p></details>"}).join("");
-  document.getElementById("trialmail").href=gmail(T[l].mTrialS,T[l].mTrialB);document.getElementById("trialmail2").href=mail(T[l].mTrialS,T[l].mTrialB);
+  document.getElementById("trialmail2").href=mail(T[l].mTrialS,T[l].mTrialB);
   document.getElementById("buymail").href=gmail(T[l].mBuyS,T[l].mBuyB);document.getElementById("buymail2").href=mail(T[l].mBuyS,T[l].mBuyB);
-  document.getElementById("b-en").className=l=="en"?"on":"";document.getElementById("b-tr").className=l=="tr"?"on":"";
+  upd();document.getElementById("b-en").className=l=="en"?"on":"";document.getElementById("b-tr").className=l=="tr"?"on":"";
 }
 var L="en";try{L=localStorage.getItem("lang")||"en"}catch(e){}
 var qm=(location.search.match(/lang=(en|tr)/)||[])[1];if(qm)L=qm;
