@@ -47,8 +47,11 @@ h2{font-size:clamp(32px,5.5vw,56px);line-height:1.08;letter-spacing:-.025em;font
 .guide{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:48px;text-align:left}
 .gcard{background:var(--card);border-radius:24px;padding:30px}.gcard h3{margin:0 0 12px;font-size:22px}.gcard ol{margin:0;padding-left:20px;color:var(--muted)}.gcard li{margin-bottom:8px}.gcard li b{color:var(--fg)}
 .req{max-width:760px;margin:48px auto 0;text-align:left;background:var(--card);border-radius:24px;overflow:hidden}.req div{display:flex;gap:24px;padding:18px 28px;border-bottom:1px solid var(--line)}.req div:last-child{border:0}.req b{width:150px;flex:none}.req span{color:var(--muted)}
-.price{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:820px;margin:48px auto 0;text-align:left}
+.price{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:18px;max-width:1080px;align-items:start;margin:48px auto 0;text-align:left}
 .pcard{background:var(--card);border-radius:24px;padding:34px}.pcard.hl{outline:2px solid var(--blue)}
+.was{text-decoration:line-through;color:var(--muted);font-size:20px;font-weight:500;margin-left:8px}.badge{display:inline-block;margin:0 0 14px;padding:4px 12px;border-radius:99px;background:var(--blue);color:#fff;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.vid{max-width:960px;margin:0 auto}.vid video{display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:20px;background:#000;box-shadow:var(--shadow)}.vwrap{position:relative}.vplay{position:absolute;left:50%;top:50%;width:88px;height:88px;margin:-44px 0 0 -44px;border:0;border-radius:50%;background:rgba(0,113,227,.92);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 40px rgba(0,0,0,.45);transition:transform .2s,background .2s}.vplay svg{margin-left:4px}.vplay:hover{transform:scale(1.07);background:var(--blue-h)}.vplay:focus-visible{outline:3px solid #fff;outline-offset:3px}.vplay[hidden]{display:none}@media (max-width:600px){.vplay{width:64px;height:64px;margin:-32px 0 0 -32px}}
+.vid .vnote{margin:14px 0 0;font-size:13px;color:var(--muted);text-align:center}
 .alt-mail{margin:12px 0 0!important;font-size:14px}.pcard h3{margin:0 0 4px;font-size:15px;color:var(--blue);text-transform:uppercase;letter-spacing:.06em}.pcard .big{font-size:40px;font-weight:700;letter-spacing:-.02em;margin:0 0 10px}.pcard p{color:var(--muted);margin:0 0 20px}
 details{border-bottom:1px solid var(--line);padding:20px 0}summary{cursor:pointer;font-size:21px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}summary::-webkit-details-marker{display:none}summary:after{content:"+";font-size:28px;line-height:1;color:var(--muted);transition:transform .2s}details[open] summary:after{transform:rotate(45deg)}details p{color:var(--muted);margin:12px 0 0}
 .faq{max-width:780px;margin:40px auto 0;text-align:left}
@@ -56,6 +59,7 @@ footer{background:var(--bg2);padding:36px 22px;font-size:13px;color:var(--muted)
 section:not(.alt) .step,section:not(.alt) .gcard,section:not(.alt) .req,section:not(.alt) .pcard{background:var(--bg2)}
 .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}.rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media (max-width:980px){.price{grid-template-columns:1fr}}
 @media (max-width:860px){.bento{grid-template-columns:1fr}.tile,.tile.w3,.tile.w4{grid-column:auto;min-height:0}.split,.price,.guide{grid-template-columns:1fr}.split.rev>:first-child{order:0}.steps{grid-template-columns:1fr 1fr}nav .links{display:none}.lang{margin-left:auto}section{padding:70px 22px}.req div{flex-direction:column;gap:4px}}
 @media (max-width:520px){.steps{grid-template-columns:1fr}}
 #tf{text-align:left;margin-top:18px}#tf label{display:block;font-size:14px;font-weight:600;margin:12px 0 4px}#tf input{width:100%;font:inherit;font-size:17px;padding:11px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--fg)}#tf input:focus{outline:2px solid var(--blue);border-color:transparent}#tf .hint,.priv{font-size:13px!important;color:var(--muted)}#tf .cf-turnstile{margin:14px 0 4px;min-height:65px}#tbtn,#tcopy{border:0;cursor:pointer;font-family:inherit;margin-top:10px}#tbtn[disabled]{opacity:.55;cursor:wait}.terr{color:#d70015;font-size:15px;margin:10px 0 0!important;min-height:0}@media (prefers-color-scheme:dark){.terr{color:#ff6961}}#tres{margin-top:18px;text-align:left}#tkey{display:block;word-break:break-all;font:14px/1.5 ui-monospace,Consolas,monospace;background:var(--bg2);border-radius:12px;padding:14px;margin:8px 0}
@@ -75,6 +79,11 @@ section:not(.alt) .step,section:not(.alt) .gcard,section:not(.alt) .req,section:
 <p class="note" data-i="dlnote"></p>
 <div class="win"><div class="bar"><img class="ico" src="img/favicon.png" alt=""><span>Tablet Mirror</span><div class="wc"><svg viewBox="0 0 10 10"><path d="M0 5h10"/></svg><svg viewBox="0 0 10 10"><rect x=".5" y=".5" width="9" height="9"/></svg><svg viewBox="0 0 10 10"><path d="M0 0l10 10M10 0L0 10"/></svg></div></div><img src="img/teaching.png" alt="Tablet Mirror Teaching screen" width="1880" height="1520"></div>
 </header>
+
+<section class="alt" id="video"><div class="c center">
+<h2 class="rv" data-i="vidT"></h2>
+<div class="vid rv"><div class="vwrap"><video id="tmv" preload="none" playsinline poster="img/video-poster.jpg" width="1920" height="1080"><source src="media/tablet-mirror.mp4" type="video/mp4"></video><button class="vplay" id="vplay" type="button" aria-label="Play video"><svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button></div></div>
+</div></section>
 
 <section class="alt" id="features"><div class="c center">
 <h2 class="rv" data-i="featT"></h2><p class="lead rv" data-i="featL"></p>
@@ -124,7 +133,8 @@ section:not(.alt) .step,section:not(.alt) .gcard,section:not(.alt) .req,section:
 <p class="terr" id="terr" role="alert"></p>
 <div id="tres" hidden><p id="tokmsg"></p><code id="tkey"></code><button class="pill" id="tcopy" type="button" data-i="fCopy"></button></div>
 <p class="priv" data-i="fPriv"></p><p class="alt-mail"><a id="trialmail2" href="#" data-i="fMailUs"></a></p></div>
-<div class="pcard rv"><h3 data-i="p2t"></h3><div class="big" data-i="p2b"></div><p data-i="p2"></p><a class="pill" id="buymail" href="#" target="_blank" rel="noopener" data-i="p2c"></a><p class="alt-mail"><a id="buymail2" href="#" data-i="mapp"></a></p></div>
+<div class="pcard rv"><h3 data-i="y1t"></h3><div class="big" data-i="y1b"></div><p data-i="y1"></p><a class="pill" id="buy1" href="#" target="_blank" rel="noopener" data-i="y1c"></a></div>
+<div class="pcard hl rv"><span class="badge" data-i="lbadge"></span><h3 data-i="l1t"></h3><div class="big" data-i="l1b"></div><p data-i="l1"></p><a class="pill" id="buy2" href="#" target="_blank" rel="noopener" data-i="l1c"></a><p class="alt-mail"><a id="buymail2" href="#" data-i="mapp"></a></p></div>
 </div></div></section>
 
 <section id="faq"><div class="c center"><h2 class="rv" data-i="faqT"></h2><div class="faq" id="faqbox"></div></div></section>
@@ -135,7 +145,7 @@ section:not(.alt) .step,section:not(.alt) .gcard,section:not(.alt) .req,section:
 <script>
 var MAIL="aydemiralisir@gmail.com";
 var T={en:{
-nFeat:"Features",nHow:"How it works",nSetup:"Setup",nPrice:"Trial",nFaq:"FAQ",
+nFeat:"Features",nHow:"How it works",nSetup:"Setup",nPrice:"Pricing",nFaq:"FAQ",
 eyebrow:"Tablet Mirror",h1:'Teach from anywhere.<br><span class="grad">Like you are in the classroom.</span>',
 sub:"Your phone camera and your tablet screen, together on your PC. Ready for Zoom, Meet and Teams.",
 dl:"Download free 14-day trial",learn:"See how it works",dlnote:"For Windows 11. No card needed.",
@@ -167,14 +177,14 @@ r3k:"Cable",r3v:"A USB data cable for each device",
 r4k:"Tested on",r4v:"Huawei MatePad 11 and Xiaomi 15T Pro",
 priceT:"Try it free for 14 days.",priceL:"Paste your Machine ID and get a trial key straight away.",
 p1t:"Free trial",p1b:"14 days",
-p1:"Open the app, copy the Machine ID from the first screen and paste it here. Your 14-day key appears instantly.",fMid:"Machine ID",fMail:"E-mail (optional)",fHint:"Optional. Only used to help you if something goes wrong and to tell you about updates.",fBtn:"Get my trial key",fCopy:"Copy key",fCopied:"Copied",fWait:"Please wait...",fOk:"Your key is valid until {d}. Copy it and paste it into the activation window.",fAgain:"You already requested a trial for this PC. Here is the same key again, valid until {d}.",eMachine:"That Machine ID doesn't look right. It looks like 0368-935B-203F-0A84.",eMail:"That e-mail address doesn't look right.",eUsed:"This PC has already used its free trial. Write to us to buy a licence.",eRate:"Too many requests. Please try again tomorrow.",eCaptcha:"Please complete the check above and try again.",eOther:"Something went wrong. You can also e-mail us your Machine ID.",fPriv:"We store your Machine ID, and your e-mail if you give it, to issue and support your trial. Nothing else is collected.",fMailUs:"Or e-mail us your Machine ID",p2t:"Licence",p2b:"Ask for price",p2:"One licence for one PC. Your recordings are always yours. Write to us for the price and how to pay.",p2c:"Ask about a licence",
+p1:"Open the app, copy the Machine ID from the first screen and paste it here. Your 14-day key appears instantly.",fMid:"Machine ID",fMail:"E-mail (optional)",fHint:"Optional. Only used to help you if something goes wrong and to tell you about updates.",fBtn:"Get my trial key",fCopy:"Copy key",fCopied:"Copied",fWait:"Please wait...",fOk:"Your key is valid until {d}. Copy it and paste it into the activation window.",fAgain:"You already requested a trial for this PC. Here is the same key again, valid until {d}.",eMachine:"That Machine ID doesn't look right. It looks like 0368-935B-203F-0A84.",eMail:"That e-mail address doesn't look right.",eUsed:"This PC has already used its free trial. Write to us to buy a licence.",eRate:"Too many requests. Please try again tomorrow.",eCaptcha:"Please complete the check above and try again.",eOther:"Something went wrong. You can also e-mail us your Machine ID.",fPriv:"We store your Machine ID, and your e-mail if you give it, to issue and support your trial. Nothing else is collected.",fMailUs:"Or e-mail us your Machine ID",p2t:"Licence",p2b:"Ask for price",p2:"One licence for one PC. Your recordings are always yours. Write to us for the price and how to pay.",p2c:"Ask about a licence",vidT:"See it in 52 seconds.",y1t:"1 year",y1b:"$9",y1:"One PC for 12 months. Your recordings are always yours. We reply with payment details and your key.",y1c:"Get 1-year licence",lbadge:"Launch price",l1t:"Lifetime",l1b:'$19<span class="was">$29</span>',l1:"One PC, no expiry. Launch price for the first buyers. Your recordings are always yours. We reply with payment details and your key.",l1c:"Get lifetime licence",mBuyYS:"Tablet Mirror 1-year licence",mBuyYB:"Hello,\nI would like to buy the 1-year licence ($9).\nMy Machine ID: \nMy name: ",mBuyLS:"Tablet Mirror lifetime licence",mBuyLB:"Hello,\nI would like to buy the lifetime licence ($19 launch price).\nMy Machine ID: \nMy name: ",
 faqT:"Questions and answers.",
 eula:"Terms (EULA)",legal:"Tablet Mirror is not affiliated with Zoom, Google, Microsoft, Xiaomi, Huawei or Samsung. All names belong to their owners.",
 mapp:"Or open in my mail app",mTrialS:"Tablet Mirror trial key",mTrialB:"Hello,\nPlease send me a 14-day trial key.\nMy Machine ID: \nMy name: ",
 mBuyS:"Tablet Mirror licence",mBuyB:"Hello,\nI would like to buy a licence.\nMy Machine ID: \nMy name: ",tTitle:"Tablet Mirror - Teach with your phone and tablet",tDesc:"Tablet Mirror brings your Android phone camera and tablet screen to your Windows PC for online lessons. 14-day free trial."},
 tr:{
 tTitle:"Tablet Mirror - Telefonunuz ve tabletinizle ders verin",tDesc:"Tablet Mirror, Android telefonunuzun kamerasını ve tabletinizin ekranını Windows bilgisayarınıza getirir. Online dersler için, 14 gün ücretsiz.",
-nFeat:"Özellikler",nHow:"Nasıl çalışır?",nSetup:"Kurulum",nPrice:"Deneme",nFaq:"SSS",
+nFeat:"Özellikler",nHow:"Nasıl çalışır?",nSetup:"Kurulum",nPrice:"Fiyat",nFaq:"SSS",
 eyebrow:"Tablet Mirror",h1:'Nerede olursanız olun,<br><span class="grad">sınıftaymış gibi ders verin.</span>',
 sub:"Telefonunuzun kamerası ile tabletinizin ekranı bilgisayarınızda yan yana. Zoom, Meet ve Teams'te hemen kullanabilirsiniz.",
 dl:"14 günlük ücretsiz deneyin",learn:"Nasıl çalıştığını görün",dlnote:"Windows 11 için. Kredi kartı gerekmez.",
@@ -206,7 +216,7 @@ r3k:"Kablo",r3v:"Her cihaz için bir USB veri kablosu",
 r4k:"Test edilen cihazlar",r4v:"Huawei MatePad 11 ve Xiaomi 15T Pro",
 priceT:"14 gün ücretsiz deneyin.",priceL:"Makine Kimliğinizi yapıştırın, deneme anahtarınızı hemen alın.",
 p1t:"Ücretsiz deneme",p1b:"14 gün",
-p1:"Uygulamayı açın, ilk ekrandaki Makine Kimliğini kopyalayıp buraya yapıştırın. 14 günlük anahtarınız hemen görünür.",fMid:"Makine Kimliği",fMail:"E-posta (isteğe bağlı)",fHint:"İsteğe bağlı. Yalnızca bir sorun olursa size yardımcı olmak ve güncellemeleri duyurmak için kullanılır.",fBtn:"Deneme anahtarımı al",fCopy:"Anahtarı kopyala",fCopied:"Kopyalandı",fWait:"Lütfen bekleyin...",fOk:"Anahtarınız {d} tarihine kadar geçerli. Kopyalayıp etkinleştirme penceresine yapıştırın.",fAgain:"Bu bilgisayar için zaten deneme istediniz. Aynı anahtar yine burada, {d} tarihine kadar geçerli.",eMachine:"Makine Kimliği doğru görünmüyor. Şuna benzemeli: 0368-935B-203F-0A84.",eMail:"E-posta adresi doğru görünmüyor.",eUsed:"Bu bilgisayar ücretsiz denemesini zaten kullandı. Lisans için bize yazın.",eRate:"Çok fazla istek geldi. Lütfen yarın tekrar deneyin.",eCaptcha:"Lütfen yukarıdaki doğrulamayı tamamlayıp tekrar deneyin.",eOther:"Bir şeyler ters gitti. Makine Kimliğinizi bize e-postayla da gönderebilirsiniz.",fPriv:"Denemenizi vermek ve desteklemek için Makine Kimliğinizi, verirseniz e-postanızı saklarız. Başka hiçbir veri toplanmaz.",fMailUs:"Ya da Makine Kimliğinizi bize e-postayla gönderin",p2t:"Lisans",p2b:"Fiyat için yazın",p2:"Bir bilgisayar için bir lisans. Kayıtlarınız her zaman size aittir. Fiyat ve ödeme bilgisi için bize yazın.",p2c:"Lisans hakkında bilgi alın",
+p1:"Uygulamayı açın, ilk ekrandaki Makine Kimliğini kopyalayıp buraya yapıştırın. 14 günlük anahtarınız hemen görünür.",fMid:"Makine Kimliği",fMail:"E-posta (isteğe bağlı)",fHint:"İsteğe bağlı. Yalnızca bir sorun olursa size yardımcı olmak ve güncellemeleri duyurmak için kullanılır.",fBtn:"Deneme anahtarımı al",fCopy:"Anahtarı kopyala",fCopied:"Kopyalandı",fWait:"Lütfen bekleyin...",fOk:"Anahtarınız {d} tarihine kadar geçerli. Kopyalayıp etkinleştirme penceresine yapıştırın.",fAgain:"Bu bilgisayar için zaten deneme istediniz. Aynı anahtar yine burada, {d} tarihine kadar geçerli.",eMachine:"Makine Kimliği doğru görünmüyor. Şuna benzemeli: 0368-935B-203F-0A84.",eMail:"E-posta adresi doğru görünmüyor.",eUsed:"Bu bilgisayar ücretsiz denemesini zaten kullandı. Lisans için bize yazın.",eRate:"Çok fazla istek geldi. Lütfen yarın tekrar deneyin.",eCaptcha:"Lütfen yukarıdaki doğrulamayı tamamlayıp tekrar deneyin.",eOther:"Bir şeyler ters gitti. Makine Kimliğinizi bize e-postayla da gönderebilirsiniz.",fPriv:"Denemenizi vermek ve desteklemek için Makine Kimliğinizi, verirseniz e-postanızı saklarız. Başka hiçbir veri toplanmaz.",fMailUs:"Ya da Makine Kimliğinizi bize e-postayla gönderin",p2t:"Lisans",p2b:"Fiyat için yazın",p2:"Bir bilgisayar için bir lisans. Kayıtlarınız her zaman size aittir. Fiyat ve ödeme bilgisi için bize yazın.",p2c:"Lisans hakkında bilgi alın",vidT:"52 saniyede görün.",y1t:"1 yıl",y1b:"$9",y1:"Bir bilgisayar için 12 ay. Kayıtlarınız her zaman size aittir. Ödeme bilgisini ve anahtarınızı e-postayla göndeririz.",y1c:"1 yıllık lisans al",lbadge:"Lansman fiyatı",l1t:"Ömür boyu",l1b:'$19<span class="was">$29</span>',l1:"Bir bilgisayar için süresiz. İlk alıcılara özel lansman fiyatı. Kayıtlarınız her zaman size aittir. Ödeme bilgisini ve anahtarınızı e-postayla göndeririz.",l1c:"Ömür boyu lisans al",mBuyYS:"Tablet Mirror 1 yıllık lisans",mBuyYB:"Merhaba,\n1 yıllık lisans ($9) satın almak istiyorum.\nMakine Kimliğim: \nAdım soyadım: ",mBuyLS:"Tablet Mirror ömür boyu lisans",mBuyLB:"Merhaba,\nÖmür boyu lisans ($19 lansman fiyatı) satın almak istiyorum.\nMakine Kimliğim: \nAdım soyadım: ",
 faqT:"Sık sorulan sorular.",
 eula:"Kullanım koşulları (EULA)",legal:"Tablet Mirror; Zoom, Google, Microsoft, Xiaomi, Huawei ve Samsung ile bağlantılı değildir. Tüm adlar ilgili sahiplerine aittir.",
 mapp:"Ya da e-posta uygulamamda aç",mTrialS:"Tablet Mirror deneme anahtarı talebi",mTrialB:"Merhaba,\n14 günlük deneme anahtarı rica ediyorum.\nMakine Kimliğim: \nAdım soyadım: ",
@@ -255,12 +265,13 @@ function setLang(l){
   document.querySelectorAll("[data-i]").forEach(function(el){var v=T[l][el.dataset.i];if(v!==undefined)el.innerHTML=v});
   document.getElementById("faqbox").innerHTML=FAQ[l].map(function(q){return "<details><summary>"+q[0]+"</summary><p>"+q[1]+"</p></details>"}).join("");
   document.getElementById("trialmail2").href=mail(T[l].mTrialS,T[l].mTrialB);
-  document.getElementById("buymail").href=gmail(T[l].mBuyS,T[l].mBuyB);document.getElementById("buymail2").href=mail(T[l].mBuyS,T[l].mBuyB);
+  document.getElementById("buy1").href=gmail(T[l].mBuyYS,T[l].mBuyYB);document.getElementById("buy2").href=gmail(T[l].mBuyLS,T[l].mBuyLB);document.getElementById("buymail2").href=mail(T[l].mBuyLS,T[l].mBuyLB);
   upd();document.getElementById("b-en").className=l=="en"?"on":"";document.getElementById("b-tr").className=l=="tr"?"on":"";
 }
 var L="en";try{L=localStorage.getItem("lang")||"en"}catch(e){}
 var qm=(location.search.match(/lang=(en|tr)/)||[])[1];if(qm)L=qm;
 setLang(L);
+(function(){var v=document.getElementById("tmv"),b=document.getElementById("vplay");if(!v||!b)return;b.onclick=function(){v.controls=true;b.hidden=true;v.play()};v.addEventListener("ended",function(){v.load();v.controls=false;b.hidden=false})})();
 if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll(".rv").forEach(function(el){io.observe(el)})}else{document.querySelectorAll(".rv").forEach(function(el){el.classList.add("in")})}
 </script>
 </body>
